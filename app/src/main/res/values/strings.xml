@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SMusic</string>
+    <string-array name="sex_list">
+        <item>男</item>
+        <item>女</item>
+        <item>保密</item>
+    </string-array>
+
+</resources>

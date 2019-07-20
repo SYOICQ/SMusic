@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#9066CCFF">
+    <Button
+        android:layout_width="0dp"
+        android:layout_weight="0.7"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@drawable/home"
+        android:id="@+id/btn_home"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="2.5"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="27dp"
+        android:text="我"
+        android:clickable="true"
+        android:textColor="#FFF"
+        android:id="@+id/my_info"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="2.5"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="22dp"
+        android:text="听"
+        android:clickable="true"
+        android:id="@+id/listening"
+        android:textColor="#FFF"/>
+    <Button
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@drawable/more"
+        android:id="@+id/btn_more"/>
+
+</LinearLayout>

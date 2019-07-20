@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/person_information"
+            android:title="个人信息"
+            android:icon="@drawable/friends"/>
+        <item
+            android:id="@+id/my_photo"
+            android:title="我的相册"
+            android:icon="@drawable/photo"/>
+        <item
+            android:id="@+id/friends"
+            android:title="我的朋友"
+            android:icon="@drawable/frien"/>
+        <group android:id="@+id/vip_line">
+            <item
+                android:id="@+id/vip"
+                android:title="会员中心"
+                android:icon="@drawable/vip_logo"/>
+        </group>
+         <group android:id="@+id/skin_center_line">
+            <item
+                android:id="@+id/skin_center"
+                android:title="皮肤中心"
+                android:icon="@drawable/skin"/>
+         </group>
+        <item
+            android:title="Setting"
+            android:id="@+id/setting">
+            <menu>
+                <item
+                    android:id="@+id/sets"
+                    android:title="设置"
+                    android:icon="@drawable/sets"/>
+                <item
+                    android:id="@+id/alarm_close"
+                    android:title="定时关闭"
+                    android:icon="@drawable/alarm"/>
+                <item
+                    android:id="@+id/exit"
+                    android:title="退出登录"
+                    android:icon="@drawable/exit"/>
+            </menu>
+        </item>
+    </group>
+</menu>

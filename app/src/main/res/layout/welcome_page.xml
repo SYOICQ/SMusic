@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" >
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/welcome_image"
+    android:scaleType="fitXY"/>
+<RadioGroup
+    android:id="@+id/welcome_radio"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal"
+    android:paddingBottom="20dp"/>
+
+<Button
+    android:id="@+id/welcome_start"
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="100dp"
+    android:background="@drawable/welcome_button"
+    android:padding="5dp"
+    android:text="立即进入"
+    android:gravity="center"
+    android:textColor="@android:color/white"
+    android:textSize="14sp"
+    android:visibility="gone"
+    />
+
+</RelativeLayout>

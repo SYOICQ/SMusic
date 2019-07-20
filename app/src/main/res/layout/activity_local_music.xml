@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_bg"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#9066CCFF">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_text"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:text="本地音乐"/>
+        <Button android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:id="@+id/back_btn"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/l1_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/high_light"
+            android:indeterminateTintMode="src_atop" />
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="玩命加载中..."
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/local_list"/>
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:text="抱歉，小S没有找到音乐！"/>
+
+</LinearLayout>

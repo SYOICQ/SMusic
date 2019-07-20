@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical">
+    //设置背景图片
+    <ImageView
+        android:id="@+id/listen_background_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_bg" />
+
+    <RelativeLayout
+        android:id="@+id/listen_rl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="1">
+        //设置返回按钮图片
+        <ImageView
+            android:id="@+id/music_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/back" />
+        //设置歌曲名
+        <TextView
+            android:id="@+id/music_title"
+            android:layout_marginRight="50dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/music_back"
+            android:text="歌名"
+            android:textColor="#f9f7f7"
+            android:textSize="20sp" />
+        //设置歌手名
+        <TextView
+            android:id="@+id/music_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/music_title"
+            android:layout_below="@id/music_title"
+            android:layout_marginTop="5dp"
+            android:text="歌手"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#aeabab"
+            android:textSize="15sp"
+            />
+        //设置专辑名
+        <TextView
+            android:id="@+id/music_song1"
+            android:layout_marginRight="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/music_singer"
+            android:layout_toRightOf="@id/music_singer"
+            android:text="歌名"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#aeabab"
+            android:textSize="15sp" />
+        //设置“分享”按钮（本代码中未实现）
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/share" />
+        //设置布局间的线
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/music_singer"
+            android:background="#bababa" />
+    </RelativeLayout>
+
+    //设置唱片圆盘
+    <ImageView
+        android:id="@+id/cd"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/cd"
+        android:visibility="visible"/>
+    //设置圆盘上的指针
+    <ImageView
+        android:id="@+id/listen_zhizhen_iv"
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/listen_rl"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/zhi_zheng"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/ya_ha">
+
+        <RelativeLayout
+            android:id="@+id/listen_play"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp">
+
+            //设置“暂停”
+            <ImageView
+                android:id="@+id/listen_pause1_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/pause" />
+            //设置我的喜欢按钮
+            <ImageView
+                android:id="@+id/my_love"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:tag="select"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/no_heart" />
+            //设置“上一首”
+            <ImageView
+                android:id="@+id/listen_back_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_toLeftOf="@id/listen_pause1_img"
+                android:src="@drawable/pre_song" />
+
+            //设置下一首
+            <ImageView
+                android:id="@+id/listen_next_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/listen_pause1_img"
+                android:src="@drawable/next_song" />
+            //设置播放列表
+            <ImageView
+                android:id="@+id/song_list"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/listen_next_img"
+                android:src="@drawable/home" />
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_above="@id/listen_play"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            //设置“当前歌曲时间”
+            <TextView
+                android:id="@+id/listen_current_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="00:00" />
+            //设置“进度条”
+            <SeekBar
+                android:id="@+id/listen_jindutiao_sb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
+            //设置“歌曲总时长”
+            <TextView
+                android:id="@+id/listen_length_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="02.00"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:textColor="@color/white"
+        android:text="词"
+        android:textSize="25dp"
+        android:layout_above="@id/ya_ha"
+        android:layout_alignParentRight="true"
+        android:id="@+id/lrc" />
+</RelativeLayout>
