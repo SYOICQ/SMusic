@@ -89,6 +89,8 @@ public class LoginActivity extends AppCompatActivity{
                     BmobUtil.loginByEmail(account.getText().toString(),password.getText().toString(), new OnSucessLoginListener() {
                         @Override
                         public void onSucessLogin(Person bmobUser, BmobException e) {
+                            App.currentUser = bmobUser;
+                            BmobUtil.showToast("登陆成功！");
                             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent);
                         }
@@ -98,7 +100,8 @@ public class LoginActivity extends AppCompatActivity{
                     BmobUtil.loginByUsername(account.getText().toString(),password.getText().toString(), new OnSucessLoginListener() {
                         @Override
                         public void onSucessLogin(Person bmobUser, BmobException e) {
-                            App.username = account.getText().toString();
+                            App.currentUser = bmobUser;
+                            BmobUtil.showToast("登陆成功！");
                             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent);
                         }

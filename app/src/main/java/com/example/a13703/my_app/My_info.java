@@ -307,7 +307,8 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
                         });
                     }
                 } else {
-
+                    BmobUtil.showToast("你还没有歌单哦！");
+                    if(flag) closeProgressDialog();
                 }
 
             }

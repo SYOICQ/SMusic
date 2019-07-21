@@ -435,7 +435,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
     private void refresh(){
         //更新用户信息
-        BmobUtil.queryUserByUserName(mApp.username, new OnQueryUserListener() {
+        BmobUtil.queryUserByUserName(mApp.currentUser.getUsername(), new OnQueryUserListener() {
             @Override
             public void OnQueryUserSucess(final List<Person> object, BmobException e) {
                 runOnUiThread(new Runnable() {
