@@ -8,14 +8,19 @@ import org.litepal.crud.DataSupport;
 import org.litepal.crud.LitePalSupport;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * Created by 13703 on 2019/6/20.
  */
 
-public class Local_music extends LitePalSupport implements Serializable {
+public class Local_music extends LitePalSupport implements Serializable,Comparable<Local_music> {
     private long Id;
     private long SongId;
+    private Integer sId;
     private String singer;
     private String song;
     private int ImageId;
@@ -30,6 +35,23 @@ public class Local_music extends LitePalSupport implements Serializable {
     private String token;
     private String lrc_url;
     private String mv_url;
+    private String createdAt;
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Integer getsId() {
+        return sId;
+    }
+
+    public void setsId(Integer sId) {
+        this.sId = sId;
+    }
 
     public String getMv_url() {
         return mv_url;
@@ -180,5 +202,19 @@ public class Local_music extends LitePalSupport implements Serializable {
                 ", mv_url='" + mv_url + '\'' +
                 ", bitm='" + bitm + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Local_music local_music) {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar currentTime = Calendar.getInstance();
+        Calendar anotherTime = Calendar.getInstance();
+        try {
+            currentTime.setTime(df.parse(this.getCreatedAt()));
+            anotherTime.setTime(df.parse(local_music.getCreatedAt()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return anotherTime.compareTo(currentTime);
     }
 }

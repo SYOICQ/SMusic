@@ -34,17 +34,19 @@
     <View android:layout_height="1dp"
         android:layout_width="match_parent"
         android:background="@color/white"/>
-        <TextView
-            android:padding="5dp"
-            android:id="@+id/add_song_list"
-            android:paddingLeft="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:text="添加到歌单"
-            android:textColor="#ffffff"
-            android:textSize="15dp"
-            android:gravity="center_vertical"
-            />
+
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/add_song_list"
+        android:paddingLeft="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:text="添加到歌单"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:gravity="center_vertical"
+        />
+
     <View android:layout_height="1dp"
         android:layout_width="match_parent"
         android:background="@color/white"/>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.a13703.my_app.Inter_kou.OnRecyclerViewItemClickListener;
 import com.example.a13703.my_app.R;
 import com.example.a13703.my_app.bean.Local_music;
 import com.example.a13703.my_app.util.StringAndBitmap;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class SongDetailAdapter extends RecyclerView.Adapter<SongDetailAdapter.ViewHolder>{
     private List<Local_music> list;
-
+    private OnRecyclerViewItemClickListener listener;
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView image;
         TextView song;
@@ -42,16 +43,33 @@ public class SongDetailAdapter extends RecyclerView.Adapter<SongDetailAdapter.Vi
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.song_item1,parent,false);
         ViewHolder holder = new ViewHolder(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(view,(int)view.getTag());
+            }
+        });
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Local_music music = list.get(position);
         holder.image.setImageBitmap(StringAndBitmap.stringToBitmap(music.getBitm()));
         holder.song.setText(music.getSong());
         holder.singer.setText(music.getSinger());
         holder.option.setImageResource(R.drawable.option);
+        holder.itemView.setTag(position);
+        holder.option.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(view,position);
+            }
+        });
+    }
+
+    public void setOnItemClickListener(OnRecyclerViewItemClickListener mItemInnerDeleteListener) {
+        this.listener = mItemInnerDeleteListener;
     }
 
     @Override

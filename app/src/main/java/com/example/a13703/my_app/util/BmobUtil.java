@@ -591,6 +591,8 @@ public class BmobUtil {
 
     public static Local_music copy(Online_Song music) {
         Local_music song = new Local_music();
+        song.setCreatedAt(music.getCreatedAt());
+        song.setsId(music.getsId());
         song.setSongId(music.getSongId());
         song.setSinger(music.getSinger());
         song.setSong(music.getSong());

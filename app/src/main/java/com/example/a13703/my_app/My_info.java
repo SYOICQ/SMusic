@@ -144,7 +144,7 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
     public void onResume(){
         super.onResume();
         register();
-        refresh(false);
+        refresh();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -161,7 +161,6 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
         adapter1.setOnInnerItemOnClickListener(this);
         expandableListView.setAdapter(adapter1);
         init_Event();
-        refresh(true);
         return view;
     }
     @Override
@@ -264,7 +263,7 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
                     BmobUtil.add_Ge_dan(App.currentUser.getUsername(), list_name, new OnaddGe_danListener() {
                         @Override
                         public void Onsucess() {
-                            refresh(false);
+                            refresh();
                         }
                     });
                 }else{
@@ -278,8 +277,7 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
         //此处设置位置窗体大小，我这里设置为了手机屏幕宽度的3/4  注意一定要在show方法调用后再写设置窗口大小的代码，否则不起效果会
         dialog.getWindow().setLayout((ScreenUtils.getScreenWidth(getContext())/4*3), LinearLayout.LayoutParams.WRAP_CONTENT);
     }
-    private void refresh(final boolean flag){
-        if(flag) showProgressDialog();
+    private void refresh(){
         expandableListView.collapseGroup(0);
         count = 0;
         mChild.clear();
@@ -301,14 +299,12 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
                                     mChild.add(result);
                                     adapter1.notifyDataSetChanged();
                                     expandableListView.expandGroup(0);
-                                    if(flag) closeProgressDialog();
                                 }
                             }
                         });
                     }
                 } else {
                     BmobUtil.showToast("你还没有歌单哦！");
-                    if(flag) closeProgressDialog();
                 }
 
             }
@@ -338,7 +334,7 @@ public class My_info extends Fragment implements View.OnClickListener,InnerItemO
                     BmobUtil.del_Ge_dan(id, new OnaddGe_danListener() {
                         @Override
                         public void Onsucess() {
-                            refresh(false);
+                            refresh();
                         }
                     });
             }
